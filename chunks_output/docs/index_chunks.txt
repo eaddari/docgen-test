@@ -1,0 +1,1 @@
+[H1] Welcome MkDocsFor full documentation visit [mkdocs.org]( Commandsmkdocs new [dir-name]- Create new project.mkdocs serve- Start live-reloading docs server.mkdocs build- Build documentation site.mkdocs -h- Print help message exit.## Project layout mkdocs.yml # The configuration file. docs/ index.md # The documentation homepage. ... # Other markdown pages, images files.

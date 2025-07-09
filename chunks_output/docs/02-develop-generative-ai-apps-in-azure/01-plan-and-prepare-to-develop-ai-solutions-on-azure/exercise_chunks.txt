@@ -1,0 +1,1 @@
+---lab: title: 'Prepare AI development project' description: 'Learn organize cloud resources hubs projects developers set success building AI solutions.'---# Prepare AI development projectIn exercise, use Azure AI Foundry portal create project, ready build AI solution.This exercise takes approximately30minutes.

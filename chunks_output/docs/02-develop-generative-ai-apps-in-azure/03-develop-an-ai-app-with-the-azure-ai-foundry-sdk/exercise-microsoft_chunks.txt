@@ -1,0 +1,1 @@
+---lab: title: 'Create generative AI chat app' description: 'Learn use Azure AI Foundry SDK build app connects project chats language model.'---# Create generative AI chat appIn exercise, use Azure AI Foundry SDK create simple chat app connects project chats language model.This exercise takes approximately40minutes.

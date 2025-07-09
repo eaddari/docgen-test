@@ -1,0 +1,1 @@
+[H1] Detect Analyze Facesimage_data: detected_faces = face_client.detect( image_content=image_data.read(), detection_model=FaceDetectionModel.DETECTION01, recognition_model=FaceRecognitionModel.RECOGNITION01, return_face_id=False, return_face_attributes=features, ) face_count = 0 len(detected_faces)

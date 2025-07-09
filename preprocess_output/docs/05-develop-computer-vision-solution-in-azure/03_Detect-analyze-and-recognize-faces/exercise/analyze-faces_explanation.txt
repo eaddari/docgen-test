@@ -1,0 +1,77 @@
+Certainly! Here is a detailed, line-by-line explanation of the provided Python code, describing the purpose and logic of each part:
+
+1. **from dotenv import load_dotenv**  
+   This imports the `load_dotenv` function from the `dotenv` package. This function is used to load environment variables from a `.env` file into the program’s environment.
+
+2. **import os**  
+   Imports the `os` module, which provides functions for interacting with the operating system, such as reading environment variables and running system commands.
+
+3. **import sys**  
+   Imports the `sys` module, which allows access to system-specific parameters and functions, such as command-line arguments.
+
+4. **from PIL import Image, ImageDraw**  
+   Imports the `Image` and `ImageDraw` classes from the Python Imaging Library (PIL). `Image` is used for opening and manipulating images, while `ImageDraw` is used for drawing shapes and text on images.
+
+5. **from matplotlib import pyplot as plt**  
+   Imports the `pyplot` module from `matplotlib` and gives it the alias `plt`. This module is used for creating and displaying plots and images.
+
+6. **# Import namespaces**  
+   This is a comment indicating where additional imports (namespaces) might be added, but no code is present here.
+
+---
+
+### The `main` function
+
+7. **def main():**  
+   Defines the main function, which will contain the primary logic of the script.
+
+8. **os.system('cls' if os.name=='nt' else 'clear')**  
+   Clears the console screen. If the operating system is Windows (`os.name == 'nt'`), it runs the `cls` command; otherwise, it runs `clear` (for Unix-like systems).
+
+9. **try:**  
+   Begins a try-except block to catch and handle any exceptions that occur during execution.
+
+10. **load_dotenv()**  
+    Loads environment variables from a `.env` file into the program’s environment.
+
+11. **cog_endpoint = os.getenv('AI_SERVICE_ENDPOINT')**  
+    Retrieves the value of the environment variable `AI_SERVICE_ENDPOINT` and stores it in the variable `cog_endpoint`.
+
+12. **cog_key = os.getenv('AI_SERVICE_KEY')**  
+    Retrieves the value of the environment variable `AI_SERVICE_KEY` and stores it in the variable `cog_key`.
+
+13. **image_file = 'images/face1.jpg'**  
+    Sets the default image file path to `'images/face1.jpg'`.
+
+14. **if len(sys.argv) > 1:**  
+    Checks if any command-line arguments were provided (other than the script name).
+
+15. **image_file = sys.argv[1]**  
+    If a command-line argument is provided, it uses the first argument as the image file path instead of the default.
+
+16. **# Authenticate Face client**  
+    A placeholder comment indicating where code to authenticate a Face API client would go.
+
+17. **# Specify facial features to be retrieved**  
+    A placeholder comment for specifying which facial features to retrieve from the API.
+
+18. **# Get faces**  
+    A placeholder comment for the code that would call the API to detect faces in the image.
+
+19. **except Exception as ex:**  
+    Catches any exceptions that occur in the try block.
+
+20. **print(ex)**  
+    Prints the exception message to the console.
+
+---
+
+### The `annotate_faces` function
+
+21. **def annotate_faces(image_file, detected_faces):**  
+    Defines a function to annotate detected faces on an image. It takes the image file path and a list of detected face objects as arguments.
+
+22. **print('\nAnnotating faces in image...')**  
+    Prints a message indicating that face annotation is starting.
+
+23. **fig = plt.figure(figsize=(8,

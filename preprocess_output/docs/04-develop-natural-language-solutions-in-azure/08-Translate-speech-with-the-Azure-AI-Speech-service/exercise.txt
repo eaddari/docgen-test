@@ -1,0 +1,1 @@
+[H1] Azure AI Speech Translation Setup Guide## 1. Provision Azure AI Speech Resource1. Go Search "Azure AI services"

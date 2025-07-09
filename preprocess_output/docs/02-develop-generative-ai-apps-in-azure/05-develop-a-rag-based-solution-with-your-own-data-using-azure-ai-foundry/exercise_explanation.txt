@@ -1,0 +1,48 @@
+Certainly! Here is a detailed, line-by-line explanation of the provided Python code, describing the purpose and logic of each part:
+
+1-7: These lines define several configuration variables as strings. They are placeholders for sensitive information and settings such as API endpoints, keys, and model names. In practice, these values are usually stored in a .env file for security and loaded at runtime.
+
+9: The os module is imported. This module provides functions for interacting with the operating system, such as clearing the console.
+
+10: The load_dotenv function is imported from the dotenv package. This function loads environment variables from a .env file into the program’s environment, making them accessible via os.getenv.
+
+11: The AzureOpenAI class is imported from the openai package. This class is used to interact with Azure’s OpenAI services, such as chat and embedding models.
+
+13: The main function is defined. This function contains the core logic of the script.
+
+15: The console is cleared for better readability. If the operating system is Windows (os.name == 'nt'), it runs the 'cls' command; otherwise, it runs 'clear' (for Unix-like systems).
+
+17: A try block is started to catch and handle any exceptions that may occur during execution.
+
+19: The load_dotenv() function is called to load environment variables from a .env file into the program’s environment.
+
+20-26: Several configuration settings are retrieved from the environment using os.getenv. These include the OpenAI endpoint and key, the chat and embedding model names, the Azure Search endpoint and key, and the search index name. These variables are used to configure the AI and search services.
+
+29-33: An AzureOpenAI chat client is instantiated using the previously loaded endpoint and API key. The api_version parameter specifies which version of the API to use.
+
+36-38: The prompt variable is initialized as a list containing a single dictionary. This dictionary represents a system message that sets the context for the AI assistant, telling it to act as a travel assistant for Margie’s Travel.
+
+41: A while True loop is started, creating an infinite loop that will continue until explicitly broken.
+
+43: The user is prompted to enter a prompt (question or instruction) via the input() function. The prompt also tells the user they can type 'quit' to exit.
+
+44-45: If the user enters 'quit' (case-insensitive), the loop breaks, and the program exits.
+
+46-48: If the user enters an empty string, a message is printed asking them to enter a prompt, and the loop continues to the next iteration.
+
+51: The user’s input is appended to the prompt list as a new dictionary with the role 'user' and the content being the user’s input. This maintains the conversation history.
+
+54-73: The rag_params dictionary is defined. This dictionary contains parameters for Retrieval-Augmented Generation (RAG), specifying how the AI should use Azure Search to retrieve relevant information:
+
+- data_sources is a list of data source configurations.
+- type is set to 'azure_search', indicating the use of Azure Cognitive Search.
+- parameters contains:
+  - endpoint: the Azure Search endpoint URL.
+  - index_name: the name of the search index to query.
+  - authentication: specifies API key authentication and provides the key.
+  - query_type: set to 'vector', indicating vector-based search.
+  - embedding_dependency: specifies which embedding model deployment to use for vectorizing the query.
+
+76-81: The chat_client’s chat.completions.create method is called to send the conversation history (prompt) and the RAG parameters (extra_body=rag_params) to the Azure OpenAI service. The model parameter specifies which chat model to use. The response is received, and the assistant’s reply is extracted from the response object and printed to the console.
+
+83: The assistant’s response is appended to the prompt list as a new dictionary with the
